@@ -718,6 +718,12 @@ img {
   width: 10rem;
   height: 10rem;
   position: absolute;
+  transform: scale(0);
+  transition: transform 0.4s ease-out;
+}
+
+.event-button:hover .button-hover {
+  transform: scale(2.5);
 }
 
 .relative {
@@ -1885,7 +1891,7 @@ img {
   grid-column-gap: 5rem;
   flex-flow: wrap;
   grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
   align-items: start;
   display: grid;

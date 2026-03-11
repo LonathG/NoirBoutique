@@ -79,7 +79,7 @@
             </div>
           </div>
           <div data-w-id="c00620c6-d1fd-d318-c2ad-334f18eed9aa" style="opacity:0" class="form-wrapper w-form">
-            <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form"
+            <form id="whatsapp-form" name="email-form" data-name="Email Form" class="form"
               data-wf-page-id="69ae79fd73e4f31b45a3f7c8" data-wf-element-id="c00620c6-d1fd-d318-c2ad-334f18eed9ab">
               <div class="form-content">
                 <div class="name-wrapper-contact"><label for="Name" class="text-size-medium-vw">Name</label><input
@@ -91,7 +91,7 @@
                     id="Enter-Your-Email" required=""></div><label for="Text-Field"
                   class="text-size-medium-vw">Message</label><textarea id="Text-Field" name="Text-Field"
                   maxlength="5000" data-name="Text Field" placeholder="Your message..."
-                  class="text-field-contact w-input"></textarea>
+                  class="text-field-contact w-input" required=""></textarea>
               </div>
               <div class="contact-button align-center">
                 <div class="relative">
@@ -102,10 +102,24 @@
                 </div>
               </div>
             </form>
-            <div class="success-message w-form-done">
+            <script>
+              document.getElementById('whatsapp-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var name = document.getElementById('Name').value;
+                var email = document.getElementById('Enter-Your-Email').value;
+                var message = document.getElementById('Text-Field').value;
+
+                var whatsappMessage = "Name: " + name + "%0AEmail: " + email + "%0AMessage: " + message;
+                var whatsappUrl = "https://wa.me/94779607209?text=" + whatsappMessage;
+
+                window.open(whatsappUrl, '_blank');
+              });
+            </script>
+            <div class="success-message w-form-done" style="display: none;">
               <div class="text-size-contact">Thank you! Your submission has been received!</div>
             </div>
-            <div class="error-message w-form-fail">
+            <div class="error-message w-form-fail" style="display: none;">
               <div class="text-size-medium-contact">Oops! Something went wrong while submitting the form.</div>
             </div>
           </div>
@@ -118,7 +132,7 @@
       <div class="w-layout-blockcontainer container w-container">
         <div class="footer-component">
           <div data-w-id="840cf11d-6f08-20b7-2ae0-7b73f27382ee" class="footer-heading"><img loading="lazy"
-              src="images/Logo-Spacekit.svg" alt="Logo" class="logo-footer"></div>
+              src="images/Noir_logo.png" alt="Logo" class="logo-footer"></div>
           <div data-w-id="840cf11d-6f08-20b7-2ae0-7b73f27382f0" class="w-layout-grid footer-grid">
             <div class="footer-grid-wrap">
               <div class="footer-text-size text-weight-medium">Explore</div>
@@ -131,13 +145,6 @@
               <div class="footer-text-size text-weight-medium">Support</div>
               <a href="faq.html" class="footer-link">FAQ</a>
               <a href="contact.html" aria-current="page" class="footer-link w--current">Contact</a>
-            </div>
-            <div class="footer-grid-wrap">
-              <div class="footer-text-size text-weight-medium">Others</div>
-              <div class="footer-links-wrapper">
-                <a href="other/style-guide.html" class="footer-link">Style Guide</a>
-                <a href="other/changelog.html" class="footer-link">Changelog</a>
-              </div>
             </div>
             <div class="footer-grid-wrap">
               <div class="footer-text-size text-weight-medium">Utility</div>
@@ -156,21 +163,13 @@
                 src="images/logo-github-1.svg" alt="Logo" class="icon-embed"></a>
           </div>
           <div data-w-id="840cf11d-6f08-20b7-2ae0-7b73f273831c" class="footer-links-wrapper">
-            <div class="footer-links">
-              <a href="other/license.html" class="footer-link">License</a>
-              <div class="vertical-line"></div>
-              <a href="other/style-guide.html" class="footer-link">Style Guide</a>
-              <div class="vertical-line"></div>
-              <a href="https://templatestudio.webflow.io/" class="footer-link">Customize</a>
-            </div>
             <div class="credits-wrapper">
               <p>Copyright ©</p>
-              <a href="https://webflow.com/templates/designers/lucas-gusso" target="_blank"
-                class="credits w-inline-block">
-                <p class="paragraph">Design &amp; Developed by <span class="text-color-black">Lucas Gusso</span></p>
+              <a href="https://www.lonath.tech" target="_blank" class="credits w-inline-block">
+                <p class="paragraph">Design &amp; Developed by <span class="text-color-black">Lonath G.</span></p>
               </a>
               <a href="https://webflow.com/" target="_blank" class="credits w-inline-block">
-                <p class="paragraph">Powered by <span class="text-color-black">Webflow</span></p>
+                <p class="paragraph">Powered by <span class="text-color-black">The Minds Studio</span></p>
               </a>
             </div>
           </div>
